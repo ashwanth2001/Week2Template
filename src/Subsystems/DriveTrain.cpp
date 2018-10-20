@@ -9,7 +9,10 @@
 #include "../RobotMap.h"
 #include "../Commands/TankDrive.h"
 
-DriveTrain::DriveTrain() : Subsystem("ExampleSubsystem") {
+DriveTrain::DriveTrain() : Subsystem("ExampleSubsystem"),
+left(new TalonSRX(0)),
+right(new TalonSRX(1))
+{
 
 }
 
@@ -21,3 +24,8 @@ void DriveTrain::InitDefaultCommand() {
 
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
+
+void DriveTrain::tankDrive(double leftPower, double rightPower) {
+	left ->Set(ControlMode::PercentOutput, leftPower);
+	right ->Set(ControlMode::PercentOutput, rightPower);
+}

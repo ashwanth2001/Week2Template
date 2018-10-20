@@ -8,15 +8,18 @@
 #pragma once
 
 #include <Commands/Subsystem.h>
+#include "ctre/Phoenix.h"
 
 class DriveTrain : public frc::Subsystem {
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
+	TalonSRX* left;
+	TalonSRX* right;
 
 public:
 	DriveTrain();
 	void InitDefaultCommand() override;
-
+	void tankDrive(double leftPower, double rightPower);
 };
 

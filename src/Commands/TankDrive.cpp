@@ -25,7 +25,7 @@ void TankDrive::Execute() {
 
 	//call tankdrive method here. Ex. Robot::drive->tankDrive()
 	//when calling methods from oi, do oi::methodName()
-
+	Robot::drive->tankDrive(0.5, 0.5);
 }
 
 // Make this return true when this Command no longer needs to run execute()
