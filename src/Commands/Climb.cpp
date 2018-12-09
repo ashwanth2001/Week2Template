@@ -5,38 +5,38 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "MoveArm.h"
+#include "Climb.h"
 #include "../Robot.h"
 #include "../OI.h"
 
-MoveArm::MoveArm() {
+Climb::Climb() {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
-	//Requires(arm);
+
 }
 
 // Called just before this Command runs the first time
-void MoveArm::Initialize() {
-//arm->moveArm(oi->getRight()->getY());
+void Climb::Initialize() {
+
 }
 
 // Called repeatedly when this Command is scheduled to run
-void MoveArm::Execute() {
+void Climb::Execute() {
 
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool MoveArm::IsFinished() {
+bool Climb::IsFinished() {
 	return false;
 }
 
 // Called once after isFinished returns true
-void MoveArm::End() {
+void Climb::End() {
 
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void MoveArm::Interrupted() {
+void Climb::Interrupted() {
 
 }

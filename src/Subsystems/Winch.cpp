@@ -5,19 +5,23 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "OI.h"
 
-#include <WPILib.h>
+#include <Subsystems/Winch.h>
+#include "../RobotMap.h"
+#include "../Commands/Climb.h"
 
-OI::OI() : leftStick(new Joystick(0)), rightStick(new Joystick(1)) {
-	// Process operator interface input here.
+Winch::Winch() : Subsystem("ExampleSubsystem") {
 
 }
 
-Joystick* OI::getLeft() {
-	return leftStick;
+void Winch::InitDefaultCommand() {
+	// Set the default command for a subsystem here.
+	// SetDefaultCommand(new MySpecialCommand());
+	SetDefaultCommand(new Climb());
 }
 
-Joystick* OI::getRight() {
-	return rightStick;
+// Put methods for controlling this subsystem
+// here. Call these from Commands.
+void Winch::climb() {
+
 }

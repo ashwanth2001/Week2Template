@@ -5,19 +5,19 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "OI.h"
+#pragma once
 
-#include <WPILib.h>
+#include <Commands/Subsystem.h>
+#include "ctre/Phoenix.h"
 
-OI::OI() : leftStick(new Joystick(0)), rightStick(new Joystick(1)) {
-	// Process operator interface input here.
+class Winch : public frc::Subsystem {
+private:
+	// It's desirable that everything possible under private except
+	// for methods that implement subsystem capabilities
+	TalonSRX* motor;
+public:
+	Winch();
+	void InitDefaultCommand() override;
+	void climb();
+};
 
-}
-
-Joystick* OI::getLeft() {
-	return leftStick;
-}
-
-Joystick* OI::getRight() {
-	return rightStick;
-}

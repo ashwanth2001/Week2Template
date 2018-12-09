@@ -5,19 +5,17 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "OI.h"
+#pragma once
 
-#include <WPILib.h>
+#include <Commands/Command.h>
 
-OI::OI() : leftStick(new Joystick(0)), rightStick(new Joystick(1)) {
-	// Process operator interface input here.
+class Climb : public frc::Command {
+public:
+	Climb();
+	void Initialize() override;
+	void Execute() override;
+	bool IsFinished() override;
+	void End() override;
+	void Interrupted() override;
+};
 
-}
-
-Joystick* OI::getLeft() {
-	return leftStick;
-}
-
-Joystick* OI::getRight() {
-	return rightStick;
-}

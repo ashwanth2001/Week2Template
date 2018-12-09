@@ -10,8 +10,8 @@
 #include "../Commands/TankDrive.h"
 
 DriveTrain::DriveTrain() : Subsystem("ExampleSubsystem"),
-left(new TalonSRX(0)),
-right(new TalonSRX(1))
+left(new TalonSRX(2)),
+right(new TalonSRX(3))
 {
 
 }
@@ -26,6 +26,6 @@ void DriveTrain::InitDefaultCommand() {
 // here. Call these from Commands.
 
 void DriveTrain::tankDrive(double leftPower, double rightPower) {
-	left ->Set(ControlMode::PercentOutput, leftPower);
-	right ->Set(ControlMode::PercentOutput, rightPower);
+	left->Set(ControlMode::PercentOutput, leftPower);
+	right->Set(ControlMode::PercentOutput, rightPower);
 }
